@@ -2362,24 +2362,13 @@
                                                         
                                                     </a>
                                                 </h5>
-                                                <p class="fs--1 mb-2 mb-md-3"><a class="text-500" href="#!">Computer
-                                                    &amp; Accessories</a></p>
+                                                <p class="fs--1 mb-2 mb-md-3"><a class="text-500" href="#!">Fasad uchun dekorativ shuvoqlar</a></p>
                                                 <ul class="list-unstyled d-none d-lg-block">
+                                                    {% for key,value in product.atr %}
                                                     <li><span class="fas fa-circle"
-                                                              data-fa-transform="shrink-12"></span><span>16GB RAM</span>
+                                                              data-fa-transform="shrink-12"></span><span>{{ key}}:{{ value }}</span>
                                                     </li>
-                                                    <li><span class="fas fa-circle"
-                                                              data-fa-transform="shrink-12"></span><span>1TB SSD Hard Drive</span>
-                                                    </li>
-                                                    <li><span class="fas fa-circle"
-                                                              data-fa-transform="shrink-12"></span><span>10-core Intel Xeon</span>
-                                                    </li>
-                                                    <li><span class="fas fa-circle"
-                                                              data-fa-transform="shrink-12"></span><span>Mac OS</span>
-                                                    </li>
-                                                    <li><span class="fas fa-circle"
-                                                              data-fa-transform="shrink-12"></span><span>Secured</span>
-                                                    </li>
+                                                    {% endfor %}    
                                                 </ul>
                                             </div>
                                             <div class="col-lg-4 d-flex justify-content-between flex-column">
