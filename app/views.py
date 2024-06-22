@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect
 
 from app.forms import ProductModelForm, CustomerModelForm
@@ -32,8 +33,12 @@ def add_product(request):
 
 
 def customers(request):
-    customer = Customers.objects.all()
-    context = {'customers': customer}
+    search_query = request.GET.get('search')
+    if search_query:
+        customers = Customers.objects.filter(Q(name__icontains=search_query) | Q(email__icontains=search_query)|Q(address__icontains=search_query))
+    else:
+        customers = Customers.objects.all()
+    context = {'customers': customers}
     return render(request, 'app/customers.html', context)
 
 
